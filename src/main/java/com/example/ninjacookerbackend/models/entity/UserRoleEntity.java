@@ -2,9 +2,17 @@ package com.example.ninjacookerbackend.models.entity;
 
 import com.example.ninjacookerbackend.models.enums.Role;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "roles")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class UserRoleEntity {
 
     @Id
@@ -14,22 +22,4 @@ public class UserRoleEntity {
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
-    public UserRoleEntity() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
 }
