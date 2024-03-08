@@ -4,6 +4,7 @@ import com.example.ninjacookerbackend.models.enums.Sex;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -29,7 +30,17 @@ public class User {
     @Column
     private Sex sex;
 
-    @Column(columnDefinition = "true")
+    @Column(columnDefinition = "boolean default true")
     private boolean isFirstLogin;
+
+    @Column(columnDefinition = "TEXT", updatable = false)
+    private String verificationCode;
+
+    @Column(columnDefinition = "boolean default false")
+    private boolean isValidate;
+
+    public User() {
+    }
+
 
 }
