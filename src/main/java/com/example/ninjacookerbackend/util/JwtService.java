@@ -48,7 +48,6 @@ public class JwtService {
         final Date expiration = getExpirationDateFromToken(token);
         return expiration.before(new Date());
     }
-
     public Date getExpirationDateFromToken(String token) {
         return getClaimFromToken(token, Claims::getExpiration);
     }
