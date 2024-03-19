@@ -52,6 +52,7 @@ public class JwtService {
     public Date getExpirationDateFromToken(String token) {
         return getClaimFromToken(token, Claims::getExpiration);
     }
+
     private Boolean ignoreTokenExpiration(String token) {
         return null;
     }
