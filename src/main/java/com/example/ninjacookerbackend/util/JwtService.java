@@ -46,7 +46,6 @@ public class JwtService {
     private Boolean ignoreTokenExpiration(String token) {
         return null;
     }
-
     public String generateToken(Map<String, Object> extraClaims, NinjaUserDetails userDetails) {
         extraClaims.put("authorities",
                 userDetails
