@@ -54,7 +54,6 @@ public class JwtService {
                         .toList());
         return doGenerateToken(extraClaims, userDetails);
     }
-
     private String doGenerateToken(Map<String, Object> extraClaims, NinjaUserDetails userDetails) {
         return Jwts.builder()
                 .setClaims(extraClaims)
