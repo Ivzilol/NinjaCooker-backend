@@ -19,6 +19,7 @@ public class JwtService {
     public static final long JWT_TOKEN_VALIDITY = 7 * 24 * 60 * 60;
     @Value("${jwt.secret}")
     private String secret;
+
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
     }
