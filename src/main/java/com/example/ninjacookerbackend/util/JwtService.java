@@ -35,6 +35,7 @@ public class JwtService {
                 .parseClaimsJws(token)
                 .getBody();
     }
+
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = getUsernameFromToken(token);
         return (userDetails != null && username.equals(userDetails.getUsername()) && !isTokenExpired(token));
